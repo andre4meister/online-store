@@ -1,0 +1,166 @@
+@import '../../styles/variables.module.scss';
+
+.container {
+  width: 350px;
+  min-height: 276px;
+  padding: 20px 0;
+  border: 1px solid #A7A7A7;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: white;
+  position: relative;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: black;
+  margin: 0 20px;
+}
+
+.cart__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    color: #A7A7A7;
+    width: 30px;
+    height: 30px;
+
+    &:hover {
+      color: #000000;
+    }
+  }
+}
+
+.cartList {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin: 10px 0;
+  padding: 0;
+}
+
+.cartItem {
+  list-style: none;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 5px;
+  padding: 0 20px;
+  position: relative;
+  background-color: #F5F5F5;
+  border: none;
+}
+
+.cartItem__image {
+  min-width: 70px;
+  height: 90px;
+  border-radius: 4px;
+  margin-right: 10px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 6px;
+  }
+}
+
+.cartItem__info {
+  p {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0;
+  }
+}
+
+.cartItem__price {
+  font-weight: 600;
+  margin: 0;
+  color: #000000;
+  text-align: center;
+}
+
+.cartItem__name {
+  font-weight: 400;
+  color: #090909;
+}
+
+.cartItem__delete {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+
+  svg {
+    color: #A7A7A7;
+
+    &:hover {
+      color: #000000;
+
+    }
+  }
+}
+
+.total {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 0 20px 0;
+
+  p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+  }
+
+  .total__label {
+    font-weight: 400;
+    margin-right: 6px;
+  }
+
+  .total__sum {
+    font-weight: 600;
+  }
+}
+
+.cart__button {
+  width: 272px;
+  height: 42px;
+  background-color: #85DF65;
+  border-radius: 6px;
+  color: black;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  margin: 0 auto;
+
+  &:active, &:hover {
+    background-color: #A3ED88;
+  }
+}

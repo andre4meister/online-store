@@ -1,0 +1,17 @@
+@import "../../styles/variables.module.scss";
+
+.title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+
+  h1 {
+    @include bold36;
+    margin: 0;
+  }
+  div {
+    height: 24px;
+    margin: auto;
+  }
+}

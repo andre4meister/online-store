@@ -1,0 +1,15 @@
+@import "../../styles/variables.module.scss";
+
+.container {
+  @include easyPageContainer;
+}
+
+.block__title {
+  h4 {
+    @include semiBold18;
+    margin: 20px auto 10px auto;
+  }
+  p, li {
+    @include regular16;
+  }
+}

@@ -1,0 +1,148 @@
+// FONT
+$fontWeight-normal: 400;
+$fontWeight-semiBold: 500;
+$fontWeight-bold: 700;
+$fontSize-xxsmall: 14px;
+$fontSize-xsmall: 16px;
+$fontSize-small: 18px;
+$fontSize-medium: 24px;
+$fontSize-large: 30px;
+
+// COLORS
+$color-white: #FFFFFF;
+$color-black: #000000;
+$color-second-black: #090909;
+$color-lime: #85DF65;
+$color-lime-click: #A3ED88;
+$color-purple: #7F6EEB;
+
+$color-gray: #A7A7A7;
+$color-gray-bg: #F5F5F5;
+
+$loader-light: #ffffff;
+$loader-dark: #fec602;
+
+
+// NOTIFICATIONS
+$successBackgroundColor: #eaf7ee;
+$successBorderColor: #d3e6d8;
+$successTextColor: #3bb65d;
+
+$infoBackgroundColor: #e5effa;
+$infoBorderColor: #c7d6e7;
+$infoTextColor: #016ce2;
+
+$errorBackgroundColor: #fcede9;
+$errorBorderColor: #edd4ce;
+$errorTextColor: #ea4e2c;
+
+// OTHERS
+$borderRadius-s: 6px;
+$borderRadius-m: 10px;
+$borderRadius-l: 14px;
+$borderRadius-xl: 20px;
+$circle: 50%;
+
+// ANIMATION
+$transition: 0.2s ease-in-out;
+$transition-slow: 0.6s ease-in-out;
+
+// MARGIN & PADDING
+$indent-xsmall: 5px;
+$indent-small: 10px;
+$indent-smedium: 15px;
+$indent-medium: 20px;
+$indent-large: 30px;
+
+// SIZES
+$size-sidebarWidth: 260px;
+
+@mixin  extraBold60 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 82px;
+  color: #FFFFFF;
+}
+
+@mixin  bold36 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 49px;
+  color: #000000;
+}
+
+@mixin  bold28 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 38px;
+  color: #000000;
+}
+
+@mixin  medium28 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 38px;
+  color: #000000;
+}
+
+@mixin medium20 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 27px;
+  color: #000000;
+}
+
+@mixin medium18 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  color: #000000;
+}
+
+@mixin semiBold18 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  color: #000000;
+}
+
+@mixin semiBoldButton16 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+}
+
+@mixin regular16 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+}
+
+@mixin regular14 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+}
+
+@mixin easyPageContainer {
+  max-width: 1180px;
+  width: 100%;
+  margin: 40px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
