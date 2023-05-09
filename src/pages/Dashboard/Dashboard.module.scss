@@ -2,89 +2,7 @@
 
 .container {
   position: relative;
-}
-
-.banner {
-  background: black;
   width: 100%;
-  height: 787px;
-  position: relative;
-}
-
-.banner__image {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-
-  img {
-    height: 100%;
-  }
-}
-
-.banner__info {
-  position: absolute;
-  left: 130px;
-  top: 146px;
-  width: 614px;
-  height: 265px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-
-  .banner__button {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 12px 25px;
-    border-radius: 8px;
-    border: 2px solid #85DF65;
-    width: 145px;
-    height: 52px;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 27px;
-    color: white;
-    background: transparent;
-  }
-
-  h1 {
-    font-weight: 800;
-    font-size: 60px;
-    line-height: 82px;
-    color: white;
-    margin: 0;
-  }
-
-  p {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 27px;
-    color: white;
-  }
-}
-
-.discountStar {
-  position: absolute;
-  left: 700px;
-  top: 510px;
-
-  p {
-    display: block;
-    width: 130px;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 27px;
-    color: white;
-    position: absolute;
-    top: 25%;
-    left: 55%;
-    transform: translate(-50%);
-    z-index: 99;
-  }
 }
 
 .title {
@@ -92,14 +10,11 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 25px;
+  margin: 25px auto 0 auto;
+  max-width: 1190px;
 
   h2 {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 49px;
-    color: #000000;
+    @include bold36;
     margin: 0;
   }
 
@@ -131,8 +46,9 @@
   border-radius: 23px;
   position: relative;
 
-  img {
+  & > img {
     height: 100%;
+    cursor: pointer;
   }
 
   .discount__block__image__star {
@@ -162,42 +78,26 @@
     height: 38px;
 
     h3 {
-      font-weight: 500;
-      font-size: 28px;
-      line-height: 38px;
+      @include medium28;
     }
 
     p {
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 25px;
+      @include medium18;
       text-decoration-line: line-through;
       color: #7C7C7C;
     }
   }
 
   & > span {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 25px;
+    @include medium18;
   }
 }
 
 .discount__block__button {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  @include limeButton;
   padding: 12px 60px;
-  gap: 10px;
   width: 243px;
   height: 46px;
-  background: #85DF65;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 4px;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
 }
 
 .products {
@@ -236,11 +136,7 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-
-  img {
-    max-width: 100%;
-    max-height: 100%;
-  }
+  cursor: pointer;
 }
 
 .item__info {
@@ -259,9 +155,7 @@
 }
 
 .item__info__name {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
+  @include regular16;
 }
 
 .item__info__price {
@@ -273,7 +167,7 @@
 .charity {
   width: 1180px;
   height: 315px;
-  margin: 36px 130px 0;
+  margin: 36px auto 0 auto;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -301,17 +195,13 @@
   margin-right: 34px;
 
   h2 {
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 49px;
+    @include bold36;
     color: #FFFFFF;
     margin: 0;
   }
 
   p {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
+    @include regular16;
     color: #FFFFFF;
     margin: 0;
   }
@@ -320,12 +210,11 @@
 .news {
   height: 277px;
   width: 100%;
-  min-width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: #7F6EEB;
+  background-color: $color-purple;
   margin-top: 40px;
 }
 
@@ -354,9 +243,8 @@
   position: relative;
 
   h2 {
-    font-weight: 700;
+    @include bold36;
     font-size: 34px;
-    line-height: 49px;
     color: #FFFFFF;
     margin: 0;
   }
@@ -391,20 +279,15 @@
 }
 
 .form__button {
+  @include whiteButton;
   width: 139px;
   height: 46px;
-  background: #FFFFFF;
-  border-radius: 7px;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 22px;
-  color: #300A0A;
 }
 
 .form__input {
+  @include input($border: 2px solid #BDB2FF);
   width: 394px;
   height: 46px;
-  border: 2px solid #BDB2FF;
   border-radius: 7px;
   background-color: transparent;
 
@@ -426,20 +309,14 @@
 }
 
 .about__block_title {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 22px;
+  @include semiBoldButton16;
   color: #FFFFFF;
   margin-bottom: 10px;
 }
 
 .menu_item {
   display: block;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
+  @include regular16;
   color: #FFFFFF;
 }
 
@@ -448,10 +325,7 @@
   width: 168px;
 
   p {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 19px;
+    @include regular14;
     color: #D3D3D3;
   }
 }
@@ -475,3 +349,413 @@
     }
   }
 }
+
+@media screen and (max-width: 1440px) {
+  .main {
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+  .title {
+    margin: 25px auto 0 auto;
+
+    h2 {
+      @include bold36;
+      margin: 0;
+    }
+
+    div {
+      margin-left: 5px;
+      margin-top: 10px;
+    }
+  }
+
+  .discount {
+    padding: 0;
+    max-width: 960px;
+
+    margin: 0 auto 40px auto;
+  }
+
+  .discount__block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 960px;
+    height: 450px;
+    margin: 40px auto 0 auto;
+    padding-right: 36px;
+  }
+
+  .discount__block__image {
+    width: 450px;
+    height: 450px;
+    border-radius: 23px;
+    position: relative;
+
+    & > img {
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .discount__block__image__star {
+      top: 20px;
+      left: 20px;
+      transform: none;
+    }
+  }
+
+  .discount__block__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 10px;
+    width: 243px;
+    height: 129px;
+
+    .price {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0;
+      gap: 20px;
+      width: 205px;
+      height: 38px;
+
+      h3 {
+        @include medium28;
+      }
+
+      p {
+        @include medium18;
+        text-decoration-line: line-through;
+        color: #7C7C7C;
+      }
+    }
+
+    & > span {
+      @include medium18;
+    }
+  }
+
+  .discount__block__button {
+    @include limeButton;
+    padding: 12px 60px;
+    width: 243px;
+    height: 46px;
+  }
+
+  .products {
+    width: 960px;
+    height: fit-content;
+    margin: 0 auto;
+  }
+
+  .products__list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 539px);
+    gap: 30px 20px;
+    margin-top: 30px;
+  }
+
+  .products__item {
+    width: 470px;
+    height: 539px;
+  }
+
+  .item__image {
+    width: 470px;
+    height: 480px;
+  }
+
+  .charity {
+    width: 960px;
+    margin: 30px auto 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .charity__image {
+    width: 256px;
+    height: 256px;
+    margin-right: 0;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  .charity__info {
+    max-width: 680px;
+    gap: 10px;
+    margin: 0 0 40px;
+  }
+
+  .news {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .discount {
+    max-width: 727px;
+  }
+
+  .discount__block {
+    width: 727px;
+    height: 347px;
+    padding-right: 0;
+  }
+
+  .discount__block__image {
+    width: 347px;
+    height: 347px;
+
+    .discount__block__image__star {
+      top: 20px;
+      left: 20px;
+      transform: none;
+    }
+  }
+
+  .products {
+    width: 727px;
+  }
+
+  .products__list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 413px);
+  }
+
+  .products__item {
+    width: 354px;
+    height: 413px;
+  }
+
+  .item__image {
+    width: 354px;
+    height: 354px;
+  }
+
+  .charity {
+    width: 727px;
+    height: 225px;
+    margin: 80px auto 0 auto;
+  }
+
+  .charity__image {
+    width: 174px;
+    height: 174px;
+  }
+
+  .charity__info {
+    max-width: 528px;
+    margin: 0 0 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    h2 {
+      @include bold28;
+    }
+  }
+
+  .main {
+    margin-top: 30px;
+  }
+  .discount {
+    margin: 0 auto 30px auto;
+  }
+
+  .discount__block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 320px;
+    height: fit-content;
+    margin-top: 30px;
+  }
+
+  .discount__block__image {
+    width: 320px;
+    height: 320px;
+
+    .discount__block__image__star {
+      width: 77px;
+      height: 77px;
+      top: 3px;
+
+      img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
+  .discount__block__info {
+    .price {
+      height: 25px;
+
+      h3 {
+        @include semiBold18;
+        margin: 0;
+      }
+
+      p {
+        @include regular16;
+        margin: 0;
+
+      }
+    }
+
+    & > span {
+      @include regular16;
+    }
+  }
+
+  .discount__block__button {
+    @include limeButton;
+    padding: 15px 98px;
+    width: 320px;
+    height: 52px;
+
+  }
+  .products {
+    width: 320px;
+  }
+
+  .products__list {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(6, 379px);
+    gap: 20px;
+  }
+
+  .products__item {
+    width: 320px;
+    height: 379px;
+  }
+
+  .item__info {
+    .item__info__name {
+      @include regular16;
+      margin: 0;
+    }
+
+    .item__info__price {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      margin: 0;
+    }
+  }
+
+  .item__image {
+    width: 320px;
+    height: 320px;
+  }
+
+  .charity {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 320px;
+    height: 504px;
+    margin: 49px auto 0 auto;
+    border-radius: 10px;
+  }
+
+  .charity__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: static;
+  }
+
+  .charity__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 10px;
+    width: 253px;
+    height: 240px;
+
+    h2 {
+      @include bold28;
+      color: white;
+      margin: 0;
+    }
+
+    p {
+      @include regular16;
+      color: white;
+    }
+  }
+
+  .news {
+    width: 100%;
+    height: 328px;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .news__info {
+    width: 100%;
+    max-width: 320px;
+    height: 156px;
+    gap: 14px;
+    margin: 30px 0 0 0;
+
+    p {
+      @include regular16;
+      padding-left: 15px;
+      width: 287px;
+      color: white;
+      margin: 0;
+    }
+  }
+
+  .info__title {
+    width: 248px;
+
+    .title__stars {
+      width: 320px;
+    }
+
+    h2 {
+      @include bold28;
+      color: white;
+      margin: 0;
+    }
+  }
+
+  .news__form {
+    padding: 10px 20px 0 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0;
+    max-width: 320px;
+  }
+
+  .form__input {
+    @include input($border: 2px solid #BDB2FF);
+    width: 320px;
+    height: 46px;
+
+  }
+
+  .form__button {
+    @include whiteButton;
+    padding: 12px 110px;
+    width: 320px;
+    height: 46px;
+  }
+}
+

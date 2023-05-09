@@ -1,3 +1,3 @@
 export default function getTotalSum(items) {
-    return items.reduce((sum, { price, quantity }) => sum + price * quantity, 0);
+    return items.reduce((sum, { item, quantity }) => sum + (item.discounPrice || item.price) * quantity, 0);
 }

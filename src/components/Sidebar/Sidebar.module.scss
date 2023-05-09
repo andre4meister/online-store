@@ -1,0 +1,63 @@
+@import '../../styles/variables.module.scss';
+
+.modal {
+  padding: 0;
+  margin: 0;
+  width: fit-content !important;
+  height: fit-content !important;
+  position: fixed;
+  top: 60px;
+  left: 0;
+
+  & > div {
+    padding: 0 !important;
+  }
+}
+
+.closeIcon {
+  position: relative;
+  top: -10px;
+
+  svg {
+    color: white;
+    width: 24px;
+    height: 24px;
+
+    &:hover {
+      color: $color-gray;
+    }
+  }
+}
+
+.sidebar {
+  width: 184px;
+  height: calc(100vh - 60px);
+  background-color: black;
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.navItem {
+  margin-bottom: 22px;
+  min-width: 100%;
+
+  a {
+    @include medium18;
+    color: white;
+    margin: 0;
+
+    &:hover {
+      color: $color-lime;
+    }
+  }
+}
+
+.sidebar__button {
+  @include limeButton;
+  @include semiBoldButton16;
+  width: 100%;
+  margin-top: 30px;
+}

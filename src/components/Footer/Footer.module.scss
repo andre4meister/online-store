@@ -61,3 +61,40 @@
     }
   }
 }
+
+@media screen and (max-width: 1400px) {
+  .about {
+    justify-content: space-around;
+  }
+
+  .media, .about__politics, .about__menu, .about__logo {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    padding: 40px 30px 40px 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    height: fit-content;
+  }
+
+  .about__logo {
+    p {
+      display: block;
+      margin: 0 !important;
+    }
+}
+
+@media screen and (max-width: 361px) {
+  .about {
+    padding: 40px 30px 40px 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    height: fit-content;
+  }
+  }
+}

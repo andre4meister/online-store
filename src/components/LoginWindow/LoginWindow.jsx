@@ -1,32 +1,16 @@
-import React, {createRef, useState} from 'react';
+import React, {createRef, useContext, useState} from 'react';
 import styles from './LoginWindow.module.scss';
 import {Button, Form, Input} from "antd";
-import {NavLink, useNavigate} from "react-router-dom";
-import {useMutation} from "@tanstack/react-query";
-import {UserAPI} from "../../services/userAPI";
-import setUserData from "../../utils/user/setUserData";
-import setToken from "../../utils/user/setToken";
+import {NavLink} from "react-router-dom";
 import Loader from "../Loader/Loader";
+import AppContext from "../../context/AppContext";
 
 const LoginWindow = ({}) => {
-    const navigate = useNavigate();
-    const navigateFromLogin = () => {
-        navigate('/', {replace: true});
-    }
-    console.log('LoginWindow render' )
     const formRef = createRef();
     const [form] = Form.useForm();
     const [disabledSave, setDisabledSave] = useState(true);
 
-    const login = useMutation({
-        mutationKey: ['login'], onSuccess: navigateFromLogin, mutationFn: async (values) => {
-            const response = await UserAPI.login(values);
-            const userData = response.data;
-            setUserData(userData, true);
-            setToken(userData.token)
-            return userData;
-        }
-    });
+    const login = useContext(AppContext)
     const {error, isLoading, data} = login;
 
     const handleFormChange = () => {

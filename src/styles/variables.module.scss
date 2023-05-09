@@ -15,8 +15,12 @@ $color-second-black: #090909;
 $color-lime: #85DF65;
 $color-lime-click: #A3ED88;
 $color-purple: #7F6EEB;
+$color-red-brown: #300A0A;
+$color-white-pink: #FADBFF;
 
 $color-gray: #A7A7A7;
+$color-gray-2: #7C7C7C;
+$color-gray-3: #D9D9D9;
 $color-gray-bg: #F5F5F5;
 
 $loader-light: #ffffff;
@@ -57,7 +61,7 @@ $indent-large: 30px;
 // SIZES
 $size-sidebarWidth: 260px;
 
-@mixin  extraBold60 {
+@mixin extraBold60 {
   font-style: normal;
   font-weight: 800;
   font-size: 60px;
@@ -65,7 +69,7 @@ $size-sidebarWidth: 260px;
   color: #FFFFFF;
 }
 
-@mixin  bold36 {
+@mixin bold36 {
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
@@ -73,7 +77,7 @@ $size-sidebarWidth: 260px;
   color: #000000;
 }
 
-@mixin  bold28 {
+@mixin bold28 {
   font-style: normal;
   font-weight: 700;
   font-size: 28px;
@@ -81,7 +85,7 @@ $size-sidebarWidth: 260px;
   color: #000000;
 }
 
-@mixin  medium28 {
+@mixin medium28 {
   font-style: normal;
   font-weight: 500;
   font-size: 28px;
@@ -137,12 +141,83 @@ $size-sidebarWidth: 260px;
   color: #000000;
 }
 
+
 @mixin easyPageContainer {
   max-width: 1180px;
   width: 100%;
   margin: 40px auto 0 auto;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+}
+
+@mixin button {
+  border: none;
+  outline: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  &:active, &:hover {
+    outline: none;
+    border: none;
+  }
+}
+
+@mixin limeButton {
+  @include button;
+  background-color: $color-lime;
+  color: $color-black;
+  border-radius: 4px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+
+  &:hover, &:active {
+    background-color: $color-lime-click !important;
+    color: $color-black !important;
+  }
+}
+
+@mixin blackButton {
+  @include button;
+  border-radius: 8px;
+  border: 2px solid #85DF65;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  color: white;
+  background: transparent;
+
+  &:active, &:hover {
+    background-color: $color-lime !important;
+    color: $color-black !important;
+  }
+}
+
+@mixin whiteButton {
+  @include button;
+  background: #FFFFFF;
+  border-radius: 7px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: $color-red-brown;
+
+
+  &:active, &:hover {
+    background: $color-white-pink;
+    color: $color-red-brown !important;
+    border: 2px transparent;
+  }
+}
+
+@mixin input($border) {
+  &:active, &:hover, &:focus {
+    border: $border;
+    outline: none;
+  }
 }

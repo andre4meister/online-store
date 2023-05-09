@@ -1,0 +1,356 @@
+@import "../../styles/variables.module.scss";
+
+.banner {
+  background: black;
+  width: 100%;
+  height: 787px;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner__image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+
+  .banner__image__main {
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 60px;
+    height: 100%;
+    width: 816px;
+    z-index: 20;
+    overflow: hidden;
+  }
+
+  .banner__image_bigStar {
+    position: absolute;
+    top: 0;
+    right: 136px;
+    width: fit-content;
+    z-index: 5;
+  }
+
+  .banner__image_smallStar {
+    position: absolute;
+    top: 63px;
+    right: 744px;
+  }
+}
+
+.banner__info {
+  position: absolute;
+  left: 130px;
+  top: 146px;
+  width: 614px;
+  height: 265px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  .banner__button {
+    @include blackButton;
+    padding: 12px 25px;
+    width: 145px;
+    height: 52px;
+  }
+
+  h1 {
+    @include extraBold60;
+    margin: 0;
+  }
+
+  p {
+    @include medium20;
+    margin: 0 0 20px 0;
+    color: white;
+  }
+}
+
+.discountStar {
+  position: absolute;
+  right: 520px;
+  top: 505px;
+  z-index: 30;
+
+  p {
+    @include medium20;
+    display: block;
+    width: 130px;
+    color: white;
+    position: absolute;
+    top: 25%;
+    left: 55%;
+    transform: translate(-50%);
+    z-index: 99;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .banner {
+    background: black;
+    width: 100%;
+    height: 626px;
+    position: relative;
+  }
+
+  .banner__image {
+    right: -130px;
+    width: 816px;
+
+    .banner__image__main {
+      background-size: cover;
+      background-position: right;
+      background-repeat: no-repeat;
+      position: absolute;
+      right: 100px;
+      height: 100%;
+      width: 816px;
+      z-index: 20;
+      overflow: hidden;
+    }
+
+    .banner__image_bigStar {
+      top: -70px;
+      right: 86px;
+      width: fit-content;
+      height: 626px;
+      overflow: hidden;
+    }
+
+    .banner__image_smallStar {
+      position: absolute;
+      top: 63px;
+      right: 744px;
+    }
+
+    .discountStar {
+      position: absolute;
+      right: 520px;
+      top: 355px;
+      z-index: 30;
+
+      p {
+        @include medium20;
+        display: block;
+        width: 130px;
+        color: white;
+        position: absolute;
+        top: 25%;
+        left: 55%;
+        transform: translate(-50%);
+        z-index: 99;
+      }
+    }
+  }
+
+  .banner__info {
+    left: 20px;
+    top: 148px;
+    width: 384px;
+    height: 225px;
+
+    .banner__button {
+      @include blackButton;
+      padding: 12px 25px;
+      width: 145px;
+      height: 52px;
+    }
+
+    h1 {
+      @include bold36;
+      color: $color-white;
+      margin: 0 0 10px 0;
+    }
+
+    p {
+      @include medium18;
+      margin: 0 0 10px 0;
+      color: white;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .banner {
+    height: 444px;
+  }
+
+  .banner__image {
+    right: -70px;
+    width: 626px;
+
+    .banner__image__main {
+      background-size: cover;
+      background-position: right;
+      background-repeat: no-repeat;
+      position: absolute;
+      right: 60px;
+      height: 100%;
+      width: 626px;
+      z-index: 20;
+      overflow: hidden;
+    }
+
+    .banner__image_bigStar {
+      right: -61px;
+      top: -105px;
+    }
+
+    .banner__image_smallStar {
+      top: 30px;
+      right: 520px;
+
+      img {
+        width: 33px;
+        height: 33px;
+
+      }
+    }
+
+    .discountStar {
+      width: 194px;
+      height: 194px;
+      right: 350px;
+      top: 230px;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      p {
+        @include semiBoldButton16;
+        width: 110px;
+        color: white;
+      }
+    }
+  }
+
+  .banner__info {
+    left: 20px;
+    top: 74px;
+    width: 370px;
+    height: 225px;
+
+    .banner__button {
+      @include blackButton;
+      padding: 12px 25px;
+      width: 145px;
+      height: 52px;
+    }
+
+    h1 {
+      @include bold36;
+      color: white;
+      margin: 0 0 10px;
+    }
+
+    p {
+      @include medium18;
+      margin: 0 0 10px 0;
+      color: white;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner {
+    min-height: 600px;
+    height: fit-content;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .banner__image {
+    left: 0px;
+    right: 0px;
+    min-width: 100%;
+    width: 360px;
+    height: 367px;
+    overflow: hidden;
+
+    .banner__image__main {
+      background-position: center;
+      right: 5px;
+      width: calc(100% + 50px);
+    }
+
+    .banner__image__main::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 35px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1));
+    }
+
+    .banner__image_bigStar {
+      width: 502px;
+      height: 502px;
+      right: -190px;
+      top: -90px;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+
+    .banner__image_smallStar {
+      display: none;
+    }
+
+    .discountStar {
+      width: 116px;
+      height: 116px;
+      left: 40px;
+      top: 42px;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      p {
+        @include semiBoldButton16;
+        width: 110px;
+        top: 10px;
+        color: white;
+      }
+    }
+  }
+
+  .banner__info {
+    top: 66%;
+    right: 0;
+    left: 10px;
+    bottom: 0;
+    width: 290px;
+    height: 204px;
+
+    .banner__button {
+      @include blackButton;
+      padding: 12px 25px;
+      width: 145px;
+      height: 52px;
+    }
+
+    h1 {
+      @include bold28;
+      color: white;
+      margin: 0 0 10px;
+    }
+
+    p {
+      @include regular16;
+      margin: 0 0 10px 0;
+      color: white;
+    }
+  }
+}

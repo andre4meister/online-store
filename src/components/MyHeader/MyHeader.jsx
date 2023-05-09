@@ -7,6 +7,7 @@ import {useContext, useState} from "react";
 import logo from '../../assets/images/logo.png';
 import CartWindow from "../CartWindow/CartWindow";
 import LoginWindow from "../LoginWindow/LoginWindow";
+import Sidebar from "../Sidebar/Sidebar";
 
 const MyHeader = ({}) => {
     const navigate = useNavigate();
@@ -26,42 +27,50 @@ const MyHeader = ({}) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const handleLoginClick = () => {
-        console.log('handleLoginClick')
         setIsLoginOpen((prev) => !prev);
         setIsCartOpen(false);
     }
 
     const handleCartClick = () => {
-        console.log('handleCartClick')
         setIsCartOpen((prev) => !prev);
         setIsLoginOpen(false);
     }
 
-    const {isAuth} = useContext(AppContext);
-
     return (
         <div className={styles.headerContainer}>
+            {
+                isMenuOpen && (
+                    <Sidebar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
+                )
+            }
+            <div className={styles.burgerMenu} onClick={() => setIsMenuOpen((prev) => !prev)}>
+                <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M3.62292 22.7092V20.5801H26.377V22.7092H3.62292ZM3.62292 16.0645V13.9354H26.377V16.0645H3.62292ZM3.62292 9.41977V7.2832H26.377V9.41977H3.62292Z"
+                        fill="currentColor"/>
+                </svg>
+            </div>
             <div className={styles.logo} onClick={() => navigate('/')}>
                 <img src={logo}
                      alt="Ligo logo"/>
             </div>
-            <div className={styles.menu}>
-                <NavLink to="/about" className={styles.menuItem}>
+            <div className={styles.navMenu}>
+                <NavLink to="/about" className={styles.navMenuItem}>
                     Про нас
                 </NavLink>
-                <NavLink to="/collaboration" className={styles.menuItem}>
+                <NavLink to="/collaboration" className={styles.navMenuItem}>
                     Співпраця
                 </NavLink>
-                <NavLink to="/delivery" className={styles.menuItem}>
+                <NavLink to="/delivery" className={styles.navMenuItem}>
                     Оплата і доставка
                 </NavLink>
-                <NavLink to="/contacts" className={styles.menuItem}>
+                <NavLink to="/contacts" className={styles.navMenuItem}>
                     Контакти
                 </NavLink>
             </div>
-            <div className={styles.menuIcons}>
-                <ShoppingCartOutlined className={styles.menuIcon} onClick={handleCartClick}/>
-                <UserOutlined className={styles.menuIcon} onClick={handleLoginClick}/>
+            <div className={styles.navMenuIcons}>
+                <ShoppingCartOutlined className={styles.navMenuIcon} onClick={handleCartClick}/>
+                <UserOutlined className={styles.navMenuIcon} onClick={handleLoginClick}/>
                 {
                     isLoginOpen || isCartOpen
                         ?
