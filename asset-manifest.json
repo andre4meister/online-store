@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/online-store/static/css/main.e1bd9401.css",
+    "main.js": "/online-store/static/js/main.c11d720d.js",
+    "static/js/787.b0dca959.chunk.js": "/online-store/static/js/787.b0dca959.chunk.js",
+    "static/media/banner.png": "/online-store/static/media/banner.3dad282fe26a04561982.png",
+    "static/media/Manrope-Regular.ttf": "/online-store/static/media/Manrope-Regular.fc58e53d1024e5b336b7.ttf",
+    "static/media/Manrope-Bold.ttf": "/online-store/static/media/Manrope-Bold.f90749d53c89d2780cfb.ttf",
+    "static/media/ukraineSign.png": "/online-store/static/media/ukraineSign.c1984a656edbc19246de.png",
+    "static/media/tg.svg": "/online-store/static/media/tg.a9b6826eb3bbe29175a636028c11ead7.svg",
+    "static/media/discountStar.svg": "/online-store/static/media/discountStar.01d8f3932ae23e5c768d08b098c4d72c.svg",
+    "static/media/inst.svg": "/online-store/static/media/inst.6f5896c4ff4a4f220c5485694742be35.svg",
+    "index.html": "/online-store/index.html",
+    "static/media/purpleBigStar.svg": "/online-store/static/media/purpleBigStar.3141e8a93d0a9ca2fbdfae5283bc61bb.svg",
+    "static/media/bannerBigLimeStar2.svg": "/online-store/static/media/bannerBigLimeStar2.315afd2f548be5cd2daadda4e33d4293.svg",
+    "static/media/bannerLimeSmall.svg": "/online-store/static/media/bannerLimeSmall.9dca564e21db1225ede343f9bab2a2c6.svg",
+    "static/media/interfaceLimeSmall.svg": "/online-store/static/media/interfaceLimeSmall.cf25f6243eff91c26f706e410879a765.svg",
+    "static/media/interfacePurpleSmall.svg": "/online-store/static/media/interfacePurpleSmall.f5ef2560c79550369eb8298a67b4620f.svg",
+    "main.e1bd9401.css.map": "/online-store/static/css/main.e1bd9401.css.map",
+    "main.c11d720d.js.map": "/online-store/static/js/main.c11d720d.js.map",
+    "787.b0dca959.chunk.js.map": "/online-store/static/js/787.b0dca959.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e1bd9401.css",
+    "static/js/main.c11d720d.js"
+  ]
+}
