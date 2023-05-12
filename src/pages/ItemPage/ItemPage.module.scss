@@ -1,4 +1,4 @@
-@import "../../styles/variables.module.scss";
+@import '../../styles/variables.module.scss';
 
 .container {
   padding: 40px 130px;
@@ -60,7 +60,7 @@
   align-items: flex-start;
   gap: 20px;
   min-width: 180px;
-  height: 100%
+  height: 100%;
 }
 
 .secondaryPhoto {
@@ -102,7 +102,8 @@
   }
 }
 
-.info__color > span, .info__sizes > span {
+.info__color > span,
+.info__sizes > span {
   @include regular14;
   display: block;
   margin: 0 0 10px 0;

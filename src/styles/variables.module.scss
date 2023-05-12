@@ -9,23 +9,22 @@ $fontSize-medium: 24px;
 $fontSize-large: 30px;
 
 // COLORS
-$color-white: #FFFFFF;
+$color-white: #ffffff;
 $color-black: #000000;
 $color-second-black: #090909;
-$color-lime: #85DF65;
-$color-lime-click: #A3ED88;
-$color-purple: #7F6EEB;
-$color-red-brown: #300A0A;
-$color-white-pink: #FADBFF;
+$color-lime: #85df65;
+$color-lime-click: #a3ed88;
+$color-purple: #7f6eeb;
+$color-red-brown: #300a0a;
+$color-white-pink: #fadbff;
 
-$color-gray: #A7A7A7;
-$color-gray-2: #7C7C7C;
-$color-gray-3: #D9D9D9;
-$color-gray-bg: #F5F5F5;
+$color-gray: #a7a7a7;
+$color-gray-2: #7c7c7c;
+$color-gray-3: #d9d9d9;
+$color-gray-bg: #f5f5f5;
 
 $loader-light: #ffffff;
 $loader-dark: #fec602;
-
 
 // NOTIFICATIONS
 $successBackgroundColor: #eaf7ee;
@@ -66,7 +65,7 @@ $size-sidebarWidth: 260px;
   font-weight: 800;
   font-size: 60px;
   line-height: 82px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 @mixin bold36 {
@@ -141,7 +140,6 @@ $size-sidebarWidth: 260px;
   color: #000000;
 }
 
-
 @mixin easyPageContainer {
   max-width: 1180px;
   width: 100%;
@@ -161,7 +159,8 @@ $size-sidebarWidth: 260px;
   align-items: center;
   justify-content: center;
 
-  &:active, &:hover {
+  &:active,
+  &:hover {
     outline: none;
     border: none;
   }
@@ -176,7 +175,8 @@ $size-sidebarWidth: 260px;
   order: 1;
   flex-grow: 0;
 
-  &:hover, &:active {
+  &:hover,
+  &:active {
     background-color: $color-lime-click !important;
     color: $color-black !important;
   }
@@ -185,14 +185,15 @@ $size-sidebarWidth: 260px;
 @mixin blackButton {
   @include button;
   border-radius: 8px;
-  border: 2px solid #85DF65;
+  border: 2px solid #85df65;
   font-weight: 600;
   font-size: 20px;
   line-height: 27px;
   color: white;
   background: transparent;
 
-  &:active, &:hover {
+  &:active,
+  &:hover {
     background-color: $color-lime !important;
     color: $color-black !important;
   }
@@ -200,15 +201,15 @@ $size-sidebarWidth: 260px;
 
 @mixin whiteButton {
   @include button;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 7px;
   font-weight: 600;
   font-size: 16px;
   line-height: 22px;
   color: $color-red-brown;
 
-
-  &:active, &:hover {
+  &:active,
+  &:hover {
     background: $color-white-pink;
     color: $color-red-brown !important;
     border: 2px transparent;
@@ -216,7 +217,9 @@ $size-sidebarWidth: 260px;
 }
 
 @mixin input($border) {
-  &:active, &:hover, &:focus {
+  &:active,
+  &:hover,
+  &:focus {
     border: $border;
     outline: none;
   }

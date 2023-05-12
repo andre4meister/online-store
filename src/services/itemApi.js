@@ -13,9 +13,7 @@ export class ItemApi {
 
   static async getItems(filters) {
     try {
-      const response = await axiosInstance.get(
-        `items${filters ? createQueriesForFetch(filters || {}) : ''}`,
-      );
+      const response = await axiosInstance.get(`items${filters ? createQueriesForFetch(filters || {}) : ''}`);
       return response;
     } catch (e) {
       return e;

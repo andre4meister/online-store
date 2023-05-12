@@ -1,0 +1,46 @@
+@import "../../styles/variables.module.scss";
+
+.container {
+  width: 283px;
+  height: 208px;
+  padding: 20px;
+  border: 1px solid #a7a7a7;
+  gap: 20px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: white;
+  position: relative;
+  z-index: 110;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  gap: 15px;
+
+  p, h3 {
+    margin: 0;
+  }
+
+  p {
+    @include medium18;
+  }
+
+  h3 {
+    @include semiBoldButton16;
+  }
+}
+
+
+.logout {
+  @include limeButton;
+  @include semiBoldButton16;
+  width: 243px;
+  height: 32px;
+}

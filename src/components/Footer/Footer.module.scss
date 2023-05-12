@@ -12,7 +12,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 10px;
 }
 
@@ -22,10 +22,10 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
-  color: #FFFFFF;
+  color: #ffffff;
 
   &:hover {
-    color: #85DF65;
+    color: #85df65;
   }
 }
 
@@ -38,7 +38,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 19px;
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
 }
 
@@ -67,7 +67,10 @@
     justify-content: space-around;
   }
 
-  .media, .about__politics, .about__menu, .about__logo {
+  .media,
+  .about__politics,
+  .about__menu,
+  .about__logo {
     margin-right: 0;
   }
 }
@@ -86,15 +89,15 @@
       display: block;
       margin: 0 !important;
     }
-}
-
-@media screen and (max-width: 361px) {
-  .about {
-    padding: 40px 30px 40px 20px;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 30px;
-    height: fit-content;
   }
+
+  @media screen and (max-width: 361px) {
+    .about {
+      padding: 40px 30px 40px 20px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      height: fit-content;
+    }
   }
 }

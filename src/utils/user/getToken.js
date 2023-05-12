@@ -1,7 +1,7 @@
 const getToken = () => {
-    const tokenFromLocalStorage = localStorage.getItem('token');
-    const token = tokenFromLocalStorage ? JSON.parse(tokenFromLocalStorage) : '';
-    return token;
+  const tokenFromLocalStorage = localStorage.getItem('token');
+  const token = tokenFromLocalStorage ? JSON.parse(tokenFromLocalStorage) : false;
+  return token;
 };
 
 export default getToken;

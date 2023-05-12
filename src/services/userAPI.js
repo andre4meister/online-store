@@ -21,7 +21,7 @@ export class UserAPI {
   }
 
   static logout() {
-    localStorage.setItem('isAuth', JSON.stringify(false));
+    localStorage.setItem('isAuth', 'false');
     localStorage.setItem('userData', '');
     localStorage.setItem('token', '');
     window.location.reload();
@@ -70,10 +70,7 @@ export class UserAPI {
 
   static async addItemToLiked(data) {
     try {
-      const response = await axiosInstance.put(
-        `users/addUserToLikedItems/${data.userId}`,
-        JSON.stringify(data),
-      );
+      const response = await axiosInstance.put(`users/addUserToLikedItems/${data.userId}`, JSON.stringify(data));
       return response;
     } catch (e) {
       return e;
@@ -82,10 +79,7 @@ export class UserAPI {
 
   static async deleteItemFromLiked(data) {
     try {
-      const response = await axiosInstance.put(
-        `users/deleteUserFromLikedItems/${data.userId}`,
-        JSON.stringify(data),
-      );
+      const response = await axiosInstance.put(`users/deleteUserFromLikedItems/${data.userId}`, JSON.stringify(data));
       return response;
     } catch (e) {
       return e;
@@ -94,10 +88,7 @@ export class UserAPI {
 
   static async addItemToUserCart(data) {
     try {
-      const response = await axiosInstance.put(
-        `users/addItemToUserCart/${data.userId}`,
-        JSON.stringify(data),
-      );
+      const response = await axiosInstance.put(`users/addItemToUserCart/${data.userId}`, JSON.stringify(data));
       return response;
     } catch (e) {
       return e;
@@ -106,10 +97,7 @@ export class UserAPI {
 
   static async deleteItemFromUserCart(data) {
     try {
-      const response = await axiosInstance.put(
-        `users/deleteItemFromUserCart/${data.userId}`,
-        JSON.stringify(data),
-      );
+      const response = await axiosInstance.put(`users/deleteItemFromUserCart/${data.userId}`, JSON.stringify(data));
       return response;
     } catch (e) {
       return e;

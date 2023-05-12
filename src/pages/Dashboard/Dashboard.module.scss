@@ -84,7 +84,7 @@
     p {
       @include medium18;
       text-decoration-line: line-through;
-      color: #7C7C7C;
+      color: #7c7c7c;
     }
   }
 
@@ -196,13 +196,13 @@
 
   h2 {
     @include bold36;
-    color: #FFFFFF;
+    color: #ffffff;
     margin: 0;
   }
 
   p {
     @include regular16;
-    color: #FFFFFF;
+    color: #ffffff;
     margin: 0;
   }
 }
@@ -231,7 +231,7 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 25px;
-    color: #FFFFFF;
+    color: #ffffff;
     display: block;
     width: 480px;
     margin: 10px auto 0 auto;
@@ -245,7 +245,7 @@
   h2 {
     @include bold36;
     font-size: 34px;
-    color: #FFFFFF;
+    color: #ffffff;
     margin: 0;
   }
 
@@ -285,7 +285,7 @@
 }
 
 .form__input {
-  @include input($border: 2px solid #BDB2FF);
+  @include input($border: 2px solid #bdb2ff);
   width: 394px;
   height: 46px;
   border-radius: 7px;
@@ -295,7 +295,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 22px;
-    color: #BDB3FF;
+    color: #bdb3ff;
   }
 }
 
@@ -310,14 +310,14 @@
 
 .about__block_title {
   @include semiBoldButton16;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 10px;
 }
 
 .menu_item {
   display: block;
   @include regular16;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .about__logo {
@@ -326,7 +326,7 @@
 
   p {
     @include regular14;
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
 }
 
@@ -431,7 +431,7 @@
       p {
         @include medium18;
         text-decoration-line: line-through;
-        color: #7C7C7C;
+        color: #7c7c7c;
       }
     }
 
@@ -609,7 +609,6 @@
       p {
         @include regular16;
         margin: 0;
-
       }
     }
 
@@ -623,7 +622,6 @@
     padding: 15px 98px;
     width: 320px;
     height: 52px;
-
   }
   .products {
     width: 320px;
@@ -745,10 +743,9 @@
   }
 
   .form__input {
-    @include input($border: 2px solid #BDB2FF);
+    @include input($border: 2px solid #bdb2ff);
     width: 320px;
     height: 46px;
-
   }
 
   .form__button {
@@ -758,4 +755,3 @@
     height: 46px;
   }
 }
-

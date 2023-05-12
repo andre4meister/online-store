@@ -13,9 +13,7 @@ export class OrderApi {
 
   static async getOrders(filters) {
     try {
-      const response = await axiosInstance.get(
-        `orders${filters ? createQueriesForFetch(filters || {}) : ''}`,
-      );
+      const response = await axiosInstance.get(`orders${filters ? createQueriesForFetch(filters || {}) : ''}`);
       return response;
     } catch (e) {
       return e;
