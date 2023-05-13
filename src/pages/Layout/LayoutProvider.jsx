@@ -11,6 +11,8 @@ import { OrderApi } from '../../services/orderAPI';
 import setToken from '../../utils/user/setToken';
 import { useNavigate } from 'react-router-dom';
 import checkResponseError from '../../utils/checkRespoonseError';
+import { Alert } from 'antd';
+import RegisterModal from '../../components/RegisterModal/RegisterModal';
 //  "homepage": "https://andre4meister.github.io/online-store/",
 
 const LayoutProvider = () => {
@@ -25,6 +27,11 @@ const LayoutProvider = () => {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showRegisterModal, setShowRegisterModal] = useState(false);
+
+  const handleCloseAlert = () => {
+    setAlert(null);
+  };
 
   const { data, error, isLoading, refetch } = useQuery({
     queryKey: ['user', { id }],
@@ -40,11 +47,9 @@ const LayoutProvider = () => {
       UserAPI.logout();
     },
     queryFn: async () => {
-      console.log('queryFn refetch');
       const response = await UserAPI.getUserById(id);
       checkResponseError(response);
-      const data = response.data;
-      return data;
+      return response.data;
     },
   });
 
@@ -54,20 +59,42 @@ const LayoutProvider = () => {
       setUserData(data.userData, true);
       setToken(data.token);
       setIsLoginOpen(false);
-      navigate('/');
       setAlert({ type: 'success', message: 'Ви успішно авторизувались' });
+    },
+    onError: (error) => {
+      const errorMessage = error.toString();
+      setAlert({ type: 'error', message: errorMessage });
     },
     mutationFn: async (values) => {
       const response = await UserAPI.login(values);
       checkResponseError(response);
-      const userData = response.data;
-      return userData;
+      return response.data;
     },
   });
 
   const logout = () => {
     UserAPI.logout();
   };
+
+  const register = useMutation({
+    mutationKey: ['registration'],
+    onSuccess: () => {
+      setIsLoginOpen(false);
+      setShowRegisterModal(false);
+    },
+    onError: (error) => {
+      const errorMessage = error.toString();
+      setAlert({ type: 'error', message: errorMessage });
+    },
+    mutationFn: async (values) => {
+      const response = await UserAPI.register(values);
+      checkResponseError(response);
+      if (response.status === 201) {
+        login.mutate({ email: values.email, password: values.password });
+      }
+      return response.data;
+    },
+  });
 
   const addItemToCart = useMutation({
     mutationKey: ['addItemToCart'],
@@ -102,6 +129,10 @@ const LayoutProvider = () => {
       setAlert({ type: 'success', message: 'Товар успішно видалено з кошика' });
       refetch(['user', { id }]);
     },
+    onError: (error) => {
+      const errorMessage = error.toString();
+      setAlert({ type: 'error', message: errorMessage });
+    },
     mutationFn: async (id) => {
       if (!id) {
         setAlert({ type: 'error', message: 'Неправильний id товару' });
@@ -125,16 +156,26 @@ const LayoutProvider = () => {
       setAlert({ type: 'success', message: 'Заказ був успішно створений!' });
       refetch(['user', { id }]);
     },
+    onError: (error) => {
+      const errorMessage = error.toString();
+      setAlert({ type: 'error', message: errorMessage });
+    },
     mutationFn: async (orderBody) => {
-      try {
-        createOrderValidation(orderBody);
-        const response = await OrderApi.createOrder(orderBody);
-        checkResponseError(response);
-        return response.data;
-      } catch (e) {
-        setAlert({ type: 'error', message: e.message });
-        return;
-      }
+      console.log(orderBody, 'orderBody');
+      createOrderValidation(orderBody);
+      const response = await OrderApi.createOrder(orderBody);
+      checkResponseError(response);
+
+      // if (response.status === 201) {
+      //   console.log(orderBody.items, 'orderBody.items');
+      //   await Promise.all(
+      //     orderBody.items.forEach((item) => {
+      //       removeItemFromCart.mutate(item.itemId);
+      //     }),
+      //   );
+      // }
+
+      return response.data;
     },
   });
 
@@ -147,6 +188,7 @@ const LayoutProvider = () => {
     isLoginOpen,
     isCartOpen,
     isMenuOpen,
+    showRegisterModal,
     actions: {
       addItemToCart,
       removeItemFromCart,
@@ -155,8 +197,10 @@ const LayoutProvider = () => {
       setIsCartOpen,
       setIsLoginOpen,
       setIsMenuOpen,
+      setShowRegisterModal,
       login,
       logout,
+      register,
     },
   };
 
@@ -166,6 +210,13 @@ const LayoutProvider = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (alert) {
+      setTimeout(() => {
+        setAlert(null);
+      }, 7000);
+    }
+  }, [alert]);
   return (
     <>
       <AppContext.Provider value={contextValue}>
@@ -174,9 +225,16 @@ const LayoutProvider = () => {
         </DataResolver>
       </AppContext.Provider>
       {alert && (
-        <div role="alert" onClick={() => setAlert(null)}>
-          {alert.message}
+        <div style={{ position: 'fixed', top: '100px', left: '20px' }}>
+          <Alert message={alert.message} type={alert.type} closable showIcon afterClose={handleCloseAlert} />
         </div>
+      )}
+      {showRegisterModal && (
+        <RegisterModal
+          register={register}
+          setShowRegisterModal={setShowRegisterModal}
+          showRegisterModal={showRegisterModal}
+        />
       )}
     </>
   );

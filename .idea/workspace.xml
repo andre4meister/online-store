@@ -5,75 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b3cb521-41ce-4e3c-a4f9-7de3d0236deb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CartWindowItem/CartWindowItem.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CartWindowItem/CartWindowItem.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LogoutWindow/LogoutWindow.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LogoutWindow/LogoutWindow.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/checkRespoonseError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/RegisterModal/RegisterModal.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Banner/Banner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Banner/Banner.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Banner/Banner.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Banner/Banner.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CartWindow/CartWindow.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartWindow/CartWindow.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CartWindow/CartWindow.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartWindow/CartWindow.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Loader/Loader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loader/Loader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Loader/Loader.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loader/Loader.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CartWindowItem/CartWindowItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartWindowItem/CartWindowItem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LoginWindow/LoginWindow.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginWindow/LoginWindow.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoginWindow/LoginWindow.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginWindow/LoginWindow.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MyHeader/MyHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MyHeader/MyHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MyHeader/MyHeader.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MyHeader/MyHeader.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PageTitle/PageTitle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PageTitle/PageTitle.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PageTitle/PageTitle.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PageTitle/PageTitle.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/AppContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/AppContext.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/DashboardContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/DashboardContext.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AboutUs/AboutUs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AboutUs/AboutUs.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AboutUs/AboutUs.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AboutUs/AboutUs.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AppErrorPage/AppErrorPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppErrorPage/AppErrorPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Auth/Auth.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Auth/Auth.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Auth/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Auth/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Auth/Registration/Registration.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Auth/Registration/Registration.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Collaboration/Collaboration.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Collaboration/Collaboration.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Collaboration/Collaboration.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Collaboration/Collaboration.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Contacts/Contacts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Contacts/Contacts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Contacts/Contacts.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Contacts/Contacts.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Dashboard/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Dashboard/Dashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Dashboard/Dashboard.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Dashboard/Dashboard.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Dashboard/DashboardProvider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Dashboard/DashboardProvider.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/ItemPage/ItemPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ItemPage/ItemPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ItemPage/ItemPage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ItemPage/ItemPage.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ItemPage/ItemPageProvider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ItemPage/ItemPageProvider.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Layout/DataResolver.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Layout/DataResolver.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Layout/Layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Layout/Layout.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Layout/Layout.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Layout/Layout.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Layout/LayoutProvider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Layout/LayoutProvider.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/NotFoundPage/NotFoundPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/NotFoundPage/NotFoundPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/PaymentAndDelivery/PaymentAndDelivery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PaymentAndDelivery/PaymentAndDelivery.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/PaymentAndDelivery/PaymentAndDelivery.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PaymentAndDelivery/PaymentAndDelivery.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reportWebVitals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/axios.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/itemApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/itemApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/orderAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/orderAPI.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/userAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/userAPI.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/App.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/fonts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/variables.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/variables.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/cart/getTotalSum.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/cart/getTotalSum.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/createQueriesForFetch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/createQueriesForFetch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/user/getCartItemStatus.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/user/getCartItemStatus.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/user/getToken.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/user/getToken.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/user/getUserData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/user/getUserData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/user/setToken.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/user/setToken.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/user/setUserData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/user/setUserData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/createOrderValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/createOrderValidation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +88,7 @@
       <workItem from="1682928420253" duration="7849000" />
       <workItem from="1682958785852" duration="146293000" />
       <workItem from="1683713919336" duration="1962000" />
-      <workItem from="1683813207958" duration="12593000" />
+      <workItem from="1683813207958" duration="22650000" />
     </task>
     <servers />
   </component>

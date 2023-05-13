@@ -50,7 +50,9 @@ const ItemPage = ({ item }) => {
               <span>Розмір</span>
               <div className={styles.info__sizes__block}>
                 <div className={styles.size}>M</div>
-                <div className={styles.size}>L</div>
+                <div className={styles.size} style={{ border: '2px solid black', fontWeight: 800 }}>
+                  L
+                </div>
                 <div className={styles.size}>XL</div>
               </div>
             </div>

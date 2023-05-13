@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styles from './CartWindow.module.scss';
-import { Button, Spin } from 'antd';
+import { Button } from 'antd';
 import getTotalSum from '../../utils/cart/getTotalSum';
 import AppContext from '../../context/AppContext';
 import CartWindowItem from '../CartWindowItem/CartWindowItem';
@@ -10,13 +10,32 @@ const CartWindow = ({ handleCartClick }) => {
   const cartItems = user?.cart.cartItemsList || [];
 
   const { isLoading, error } = actions.createOrder;
-  const removeItemFromCart = (id) => {
-    actions.removeItemFromCart.mutate(id);
+
+  const itemsForOrder = cartItems.map((item) => ({ itemId: item.itemId, quantity: item.quantity }));
+  const handleCreateOrder = () => {
+    const orderBody = {
+      userId: user.id,
+      paymentStatus: 'notpayed',
+      price: getTotalSum(cartItems),
+      shipmentMethod: 'Ukr Poshta',
+      delivery: {
+        country: 'Ukraine',
+        city: 'Lviv',
+        postMethod: 'Ukr Poshta',
+        chosenDepartment: 78059,
+      },
+      recipientInfo: {
+        name: user.name || 'Andrii',
+        surname: user.surname || 'Yarem',
+        email: user.email,
+        phone: user.phone,
+      },
+      items: itemsForOrder,
+    };
+
+    actions.createOrder.mutate(orderBody);
   };
 
-  if (isLoading) {
-    return <Spin className={styles.spinner} size="default" />;
-  }
   return (
     <div className={styles.container}>
       <p className={styles.title}>{`Корзина(${cartItems.length})`}</p>
@@ -30,7 +49,7 @@ const CartWindow = ({ handleCartClick }) => {
       </div>
       <ul className={styles.cartList}>
         {cartItems.map(({ item }) => (
-          <CartWindowItem item={item} key={item.id} />
+          <CartWindowItem item={item} removeItemFromCart={actions.removeItemFromCart} key={item.id} />
         ))}
       </ul>
       {cartItems.length > 0 ? (
@@ -39,7 +58,9 @@ const CartWindow = ({ handleCartClick }) => {
             <p className={styles.total__label}>До сплати:</p>
             <p className={styles.total__sum}>{`${getTotalSum(cartItems)} ГРН`}</p>
           </div>
-          <Button className={styles.cart__button}>Оплатити</Button>
+          <Button onClick={handleCreateOrder} className={styles.cart__button} loading={isLoading}>
+            Оплатити
+          </Button>
         </>
       ) : (
         <div

@@ -21,7 +21,7 @@ const LoginWindow = ({ setIsLoginOpen }) => {
   };
 
   const onFinish = (values) => {
-    login.mutate(values, setIsLoginOpen);
+    login.mutate(values);
   };
 
   if (isLoading) {
@@ -88,7 +88,9 @@ const LoginWindow = ({ setIsLoginOpen }) => {
       </Form>
       <div className={styles.registration}>
         <p>Не маєте акаунта?</p>
-        <NavLink to="/registration">Зареєструйтесь</NavLink>
+        <NavLink to="/" onClick={() => actions.setShowRegisterModal(true)}>
+          Зареєструйтесь
+        </NavLink>
       </div>
     </div>
   );
