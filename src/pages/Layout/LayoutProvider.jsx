@@ -9,11 +9,9 @@ import createOrderValidation from '../../utils/validators/createOrderValidation'
 import getUserData from '../../utils/user/getUserData';
 import { OrderApi } from '../../services/orderAPI';
 import setToken from '../../utils/user/setToken';
-import { useNavigate } from 'react-router-dom';
 import checkResponseError from '../../utils/checkRespoonseError';
 import { Alert } from 'antd';
 import RegisterModal from '../../components/RegisterModal/RegisterModal';
-//  "homepage": "https://andre4meister.github.io/online-store/",
 
 const LayoutProvider = () => {
   let id;
@@ -22,7 +20,6 @@ const LayoutProvider = () => {
     id = parsedUserData.id;
   }
 
-  const navigate = useNavigate();
   const [alert, setAlert] = useState(null);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -35,7 +32,6 @@ const LayoutProvider = () => {
 
   const { data, error, isLoading, refetch } = useQuery({
     queryKey: ['user', { id }],
-    // enabled: !!id,
     enabled: false,
     initialData: () => {
       return null;
@@ -56,7 +52,7 @@ const LayoutProvider = () => {
   const login = useMutation({
     mutationKey: ['login'],
     onSuccess: (data) => {
-      setUserData(data.userData, true);
+      refetch(['user', { id: data.userData.id }]);
       setToken(data.token);
       setIsLoginOpen(false);
       setAlert({ type: 'success', message: 'Ви успішно авторизувались' });
@@ -103,7 +99,7 @@ const LayoutProvider = () => {
       refetch(['user', { id }]);
     },
     onError: (error) => {
-      setAlert({ type: 'error', message: 'Помилка при додаванні товару до кошика' });
+      setAlert({ type: 'error', message: error.toString() || 'Помилка при додаванні товару до кошика' });
     },
     mutationFn: async (id) => {
       if (!id) {
@@ -112,9 +108,8 @@ const LayoutProvider = () => {
       }
 
       const userData = getUserData();
-      if (!userData) {
-        setAlert({ type: 'error', message: 'Ви не авторизовані' });
-        return;
+      if (userData === null) {
+        throw new Error('Ви повині бути авторизовані для додавання товарів у кошик');
       }
 
       const response = await UserAPI.addItemToUserCart({ userId: userData.id, itemId: id });
@@ -141,8 +136,7 @@ const LayoutProvider = () => {
 
       const userData = getUserData();
       if (!userData) {
-        setAlert({ type: 'error', message: 'Ви не авторизовані' });
-        return;
+        throw new Error('Ви повинні бути авторизовані для видалення товарів з корзини');
       }
       const response = await UserAPI.deleteItemFromUserCart({ userId: userData.id, itemId: id });
       checkResponseError(response);
@@ -161,19 +155,13 @@ const LayoutProvider = () => {
       setAlert({ type: 'error', message: errorMessage });
     },
     mutationFn: async (orderBody) => {
-      console.log(orderBody, 'orderBody');
+      const userData = getUserData();
+      if (!userData) {
+        throw new Error('Ви повинні бути авторизовані для створення замовлення');
+      }
       createOrderValidation(orderBody);
       const response = await OrderApi.createOrder(orderBody);
       checkResponseError(response);
-
-      // if (response.status === 201) {
-      //   console.log(orderBody.items, 'orderBody.items');
-      //   await Promise.all(
-      //     orderBody.items.forEach((item) => {
-      //       removeItemFromCart.mutate(item.itemId);
-      //     }),
-      //   );
-      // }
 
       return response.data;
     },
@@ -205,18 +193,35 @@ const LayoutProvider = () => {
   };
 
   useEffect(() => {
+    document.body.style.overflow = isLoading ? 'hidden' : 'auto';
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isLoading]);
+
+  useEffect(() => {
     if (id) {
       refetch(['user', { id }]);
     }
   }, []);
 
   useEffect(() => {
+    let timeoutId = null;
+
     if (alert) {
-      setTimeout(() => {
+      timeoutId = setTimeout(() => {
         setAlert(null);
       }, 7000);
+    } else {
+      clearTimeout(timeoutId);
     }
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, [alert]);
+
   return (
     <>
       <AppContext.Provider value={contextValue}>
@@ -225,7 +230,7 @@ const LayoutProvider = () => {
         </DataResolver>
       </AppContext.Provider>
       {alert && (
-        <div style={{ position: 'fixed', top: '100px', left: '20px' }}>
+        <div style={{ position: 'fixed', top: '100px', left: '20px', maxWidth: '300px' }}>
           <Alert message={alert.message} type={alert.type} closable showIcon afterClose={handleCloseAlert} />
         </div>
       )}

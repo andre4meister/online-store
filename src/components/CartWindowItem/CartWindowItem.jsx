@@ -1,4 +1,4 @@
-import styles from '../CartWindow/CartWindow.module.scss';
+import styles from './CartWindowItem.module.scss';
 import { Spin } from 'antd';
 
 const CartWindowItem = ({ item, removeItemFromCart }) => {
@@ -21,7 +21,7 @@ const CartWindowItem = ({ item, removeItemFromCart }) => {
         </div>
       </div>
       {isLoading ? (
-        <Spin size="small" spinning={true} />
+        <Spin size="small" spinning={true} className={styles.spinner} />
       ) : (
         <div className={styles.cartItem__delete} onClick={handleRemoveItemFromCart}>
           <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">

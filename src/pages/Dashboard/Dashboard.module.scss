@@ -272,7 +272,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   width: 548px;
   padding: 0;
   margin-top: 42px;
@@ -282,6 +282,10 @@
   @include whiteButton;
   width: 139px;
   height: 46px;
+}
+
+.form__item {
+  margin: 0;
 }
 
 .form__input {

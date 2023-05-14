@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 
 const AppErrorPage = ({ appError }) => {
   const navigate = useNavigate();
-  console.log('error');
 
   const onReloadClick = () => {
     window.location.reload();

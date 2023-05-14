@@ -1,7 +1,7 @@
 import { ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';
 import styles from './MyHeader.module.scss';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import logo from '../../assets/images/logo.png';
 import CartWindow from '../CartWindow/CartWindow';
 import LoginWindow from '../LoginWindow/LoginWindow';
@@ -14,15 +14,36 @@ const MyHeader = ({}) => {
   const { actions, isLoginOpen, isCartOpen, isMenuOpen } = useContext(AppContext);
   const { setIsLoginOpen, setIsCartOpen, setIsMenuOpen } = actions;
 
-  const handleLoginClick = () => {
+  const handleLoginClick = (event) => {
+    event.stopPropagation();
     setIsLoginOpen((prev) => !prev);
     setIsCartOpen(false);
   };
 
-  const handleCartClick = () => {
+  const handleCartClick = (event) => {
+    event.stopPropagation();
     setIsCartOpen((prev) => !prev);
     setIsLoginOpen(false);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const cartOrLoginWindow = document.querySelector(`.${styles.cartOrLoginWindow}`);
+
+      if (cartOrLoginWindow && !cartOrLoginWindow.contains(event.target)) {
+        setIsCartOpen(false);
+        setIsLoginOpen(false);
+      }
+    };
+
+    if (isLoginOpen || isCartOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isLoginOpen, isCartOpen, setIsCartOpen, setIsLoginOpen]);
 
   return (
     <div className={styles.headerContainer}>

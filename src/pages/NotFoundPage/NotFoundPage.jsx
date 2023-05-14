@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 
 const NotFoundPage = ({}) => {
   const navigate = useNavigate();
-  console.log('not found');
   const onMainPageClick = () => {
     navigate('/');
   };
@@ -17,7 +16,7 @@ const NotFoundPage = ({}) => {
     <Row justify="center" align="middle">
       <Result
         status="404"
-        title={`Not found. There is no page with this url.`}
+        title="Not found. There is no page with this url."
         extra={[
           <Button type="primary" size="large" onClick={onMainPageClick} key="main">
             Go to main page

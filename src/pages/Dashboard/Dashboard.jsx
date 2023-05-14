@@ -18,10 +18,20 @@ const Dashboard = () => {
     navigate(`/item/${id}`);
   };
 
-  const { allItems, discountItem, newItem, collection } = useContext(DashboardContext);
+  const { discountItem, newItem, collection } = useContext(DashboardContext);
   const { actions } = useContext(AppContext);
 
-  const { isLoading, data, error } = actions.addItemToCart;
+  const [form] = Form.useForm();
+  const newsInputRef = React.createRef();
+
+  const { isLoading } = actions.addItemToCart;
+
+  const handleSubscribeNews = () => {
+    const email = form.getFieldValue('email');
+    actions.setAlert({ type: 'success', message: `Ви успішно підписались на новини! Ваш email - ${email}` });
+    form.resetFields();
+  };
+
   const addToCart = (id) => {
     actions.addItemToCart.mutate(id);
   };
@@ -112,9 +122,26 @@ const Dashboard = () => {
           </div>
           <p>Підпишіться на нашу розсилку, щоб першим дізнаватись про обнову в колеціях.</p>
         </div>
-        <Form className={styles.news__form}>
-          <Input className={styles.form__input} placeholder="Email" />
-          <Button className={styles.form__button} onClick={() => alert('email added')}>
+        <Form form={form} className={styles.news__form}>
+          <Form.Item
+            name="email"
+            className={styles.form__item}
+            rules={[
+              {
+                required: true,
+                min: 8,
+                max: 26,
+                whitespace: false,
+                message: 'Incorrect email, try another',
+                pattern: new RegExp(
+                  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                ),
+              },
+            ]}
+          >
+            <Input className={styles.form__input} placeholder="Email" />
+          </Form.Item>
+          <Button className={styles.form__button} onClick={handleSubscribeNews}>
             Підписатись
           </Button>
         </Form>
